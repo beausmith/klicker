@@ -4,6 +4,9 @@
   "version": "1.0.0",
   "type": "module",
   "description": "A mobile-first click-counter PWA.",
+  "engines": {
+    "node": ">=24"
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
