@@ -6,10 +6,10 @@ import { VitePWA } from "vite-plugin-pwa";
 const THEME_COLOR = "#7c5cff";
 const BACKGROUND_COLOR = "#16161e";
 
-// Served from https://beausmith.github.io/Klicker/ — a project page, so the
-// app lives under the /Klicker/ subpath. Asset URLs and the service worker
+// Served from https://beausmith.github.io/klicker/ — a project page, so the
+// app lives under the /klicker/ subpath. Asset URLs and the service worker
 // scope must include it.
-const BASE = "/Klicker/";
+const BASE = "/klicker/";
 
 export default defineConfig({
   base: BASE,

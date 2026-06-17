@@ -25,7 +25,7 @@ PWA built with HTML / CSS / TypeScript, bundled with **Vite** (`vite-plugin-pwa`
 ### Structure
 
 ```
-Klicker/
+klicker/
 ├─ index.html          # includes the reset confirmation modal markup
 ├─ src/
 │  ├─ main.ts          # entry: wire DOM + events (incl. keyboard, wake lock, reset modal)
