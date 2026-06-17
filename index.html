@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=no"
+    />
+    <meta name="theme-color" content="#7c5cff" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="description" content="A mobile-first click counter." />
+    <title>Klicker</title>
+  </head>
+  <body>
+    <main class="app">
+      <header class="stats">
+        <div class="stat">
+          <span class="stat__label">Count</span>
+          <output id="count" class="stat__value stat__value--count" aria-live="polite">0</output>
+        </div>
+        <div class="stat">
+          <span class="stat__label">Best</span>
+          <output id="record" class="stat__value stat__value--record">0</output>
+        </div>
+      </header>
+
+      <div
+        class="progress"
+        role="progressbar"
+        aria-valuemin="0"
+        aria-valuemax="100"
+        aria-valuenow="0"
+        aria-label="Progress toward your best"
+      >
+        <div id="progress-fill" class="progress__fill"></div>
+      </div>
+
+      <button id="click" class="click-button" type="button" aria-label="Increment count">
+        <span class="click-button__plus" aria-hidden="true">+1</span>
+      </button>
+
+      <footer class="controls">
+        <button id="reset" class="btn btn--reset" type="button">Reset</button>
+
+        <div class="theme-toggle" role="radiogroup" aria-label="Theme">
+          <button class="theme-toggle__option" type="button" data-theme-choice="light" role="radio" aria-checked="false">
+            Light
+          </button>
+          <button class="theme-toggle__option" type="button" data-theme-choice="dark" role="radio" aria-checked="false">
+            Dark
+          </button>
+          <button class="theme-toggle__option" type="button" data-theme-choice="system" role="radio" aria-checked="false">
+            System
+          </button>
+        </div>
+      </footer>
+    </main>
+
+    <div id="reset-dialog" class="modal" hidden>
+      <div class="modal__backdrop" data-close="cancel"></div>
+      <div
+        class="modal__panel"
+        role="alertdialog"
+        aria-modal="true"
+        aria-labelledby="reset-dialog-title"
+        aria-describedby="reset-dialog-desc"
+      >
+        <h2 id="reset-dialog-title" class="modal__title">Reset count?</h2>
+        <p id="reset-dialog-desc" class="modal__desc">
+          This sets the current count back to 0. Your best stays saved.
+        </p>
+        <div class="modal__actions">
+          <button id="reset-cancel" class="btn" type="button" data-close="cancel">Cancel</button>
+          <button id="reset-confirm" class="btn btn--danger" type="button">Reset</button>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
